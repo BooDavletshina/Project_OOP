@@ -1,10 +1,10 @@
 class Category:
-    name: str          #название
-    description: str   #описание
-    product: list      #список товаров категории
+    name: str  # название
+    description: str  # описание
+    product: list  # список товаров категории
 
-    category_count = 0  #количество категорий
-    product_count = 0   #количество товаров
+    category_count = 0  # количество категорий
+    product_count = 0  # количество товаров
 
     def __init__(self, name, description, product):
         self.name = name
