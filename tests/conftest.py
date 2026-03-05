@@ -5,7 +5,7 @@ from src.product import Product
 
 
 @pytest.fixture
-def product():
+def product_example():
     return Product(
         name="Samsung Galaxy C23 Ultra",
         description="256GB, Серый цвет, 200MP камера",
@@ -15,12 +15,12 @@ def product():
 
 
 @pytest.fixture
-def category():
+def category_example():
     return Category(
         name="Смартфоны",
         description="Смартфоны, как средство не только коммуникации, "
                     "но и получение дополнительных функций для удобства жизни",
-        product=[
+        products=[
             {
                 "name": "Samsung Galaxy C23 Ultra",
                 "description": "256GB, Серый цвет, 200MP камера",

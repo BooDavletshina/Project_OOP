@@ -1,9 +1,9 @@
-def test_category_init(category):
+def test_category_init(category_example):
     """Тест на корректность инициализации объектов класса Category"""
-    assert category.name == "Смартфоны"
-    assert category.description == ("Смартфоны, как средство не только коммуникации, но и получение дополнительных "
+    assert category_example.name == "Смартфоны"
+    assert category_example.description == ("Смартфоны, как средство не только коммуникации, но и получение дополнительных "
                                     "функций для удобства жизни")
-    assert category.product == [
+    assert category_example.products == [
         {
             "name": "Samsung Galaxy C23 Ultra",
             "description": "256GB, Серый цвет, 200MP камера",
@@ -25,5 +25,5 @@ def test_category_init(category):
     ]
 
     # """Тест на корректный подсчет количества продуктов и подсчет количества категорий"""
-    assert category.category_count == 1
-    assert category.product_count == 3
+    assert category_example.category_count == 1
+    assert category_example.product_count == 3

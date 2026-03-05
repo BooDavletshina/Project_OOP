@@ -1,14 +1,14 @@
 class Category:
     name: str  # название
     description: str  # описание
-    product: list  # список товаров категории
+    products: list  # список товаров категории
 
     category_count = 0  # количество категорий
     product_count = 0  # количество товаров
 
-    def __init__(self, name, description, product):
+    def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.product = product
+        self.products = products
         Category.category_count += 1
-        Category.product_count += len(product)
+        Category.product_count += len(products)
