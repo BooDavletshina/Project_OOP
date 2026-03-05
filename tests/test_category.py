@@ -1,8 +1,8 @@
 def test_category_init(category_example):
     """Тест на корректность инициализации объектов класса Category"""
     assert category_example.name == "Смартфоны"
-    assert category_example.description == ("Смартфоны, как средство не только коммуникации, но и получение дополнительных "
-                                    "функций для удобства жизни")
+    assert category_example.description == ("Смартфоны, как средство не только коммуникации, но и получение "
+                                            "дополнительных функций для удобства жизни")
     assert category_example.products == [
         {
             "name": "Samsung Galaxy C23 Ultra",
