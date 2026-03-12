@@ -37,14 +37,15 @@ class Product:
         else:
             self.__price = new_price
 
+
 if __name__ == "__main__":
     product_1 = {
         "name": "Xiaomi Redmi Note 11",
         "description": "1024GB, Синий",
         "price": 31000.0,
         "quantity": 14
-      }
-    product = Product.new_product(product_1) # проверка класс-метода
+    }
+    product = Product.new_product(product_1)  # проверка класс-метода
     print(product.name)
     print(product.description)
     print(product.price)
