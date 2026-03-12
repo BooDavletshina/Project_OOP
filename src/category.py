@@ -26,9 +26,15 @@ class Category:
         return products_str
 
 
-    def add_product(self, product: Product):
+    def add_product(self, new_product: Product):
         """Метод для добавления продукта в атрибут products"""
-        self.__products.append(product)
+        for product in self.__products:
+            if product.name == new_product.name:   #проверяем на дубликат по имени
+                product.quantity += new_product.quantity  #если дубликат по имени складываем кол-во
+                product.price = max(product.price, new_product.price) #выбираем максимальную цену
+                return
+
+        self.__products.append(new_product)
         Category.product_count += 1
 
 
@@ -50,6 +56,11 @@ if __name__ == "__main__":
 
     product_3 = Product("Xiaomi Redmi Note 11","1024GB, Синий",31000.0,14)
     category_1.add_product(product_3)
+    print(category_1.products)
+    print(category_1.product_count)
+
+    product_4 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 33000.0, 15)
+    category_1.add_product(product_4)
     print(category_1.products)
     print(category_1.product_count)
 
