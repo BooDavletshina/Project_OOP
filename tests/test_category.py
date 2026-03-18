@@ -28,3 +28,8 @@ def test_add_product(category_example, product_example):
 def test_product_property(category_example):
     """Тест геттера, который возвращает значение атрибута products """
     assert len(category_example.product) == 3
+
+
+def test_category_str(category_example):
+    """Тест на корректное выведение строкового отображения"""
+    assert str(category_example) == "Смартфоны, количество продуктов: 27 шт."

@@ -17,7 +17,10 @@ class Category:
         Category.product_count += len(products)
 
     def __str__(self):
-        return f"{self.name}, количество продуктов: {Category.product_count} шт."
+        full_product_count = 0
+        for product in self.__products:
+            full_product_count += product.quantity
+        return f"{self.name}, количество продуктов: {full_product_count} шт."
 
     @property
     def products(self):
@@ -44,6 +47,7 @@ class Category:
     def product(self):
         """Метод, который возвращает значение атрибута products"""
         return self.__products
+
 
 # if __name__ == "__main__":
 #     product_1 = Product("Samsung Galaxy C23 Ultra",

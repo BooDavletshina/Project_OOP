@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.product import Product
+from src.product_iterator import ProductIterator
 
 
 @pytest.fixture
@@ -11,6 +12,16 @@ def product_example():
         description="256GB, Серый цвет, 200MP камера",
         price=180000.0,
         quantity=5
+    )
+
+
+@pytest.fixture
+def product_example2():
+    return Product(
+        name="Iphone 15",
+        description="512GB, Gray space",
+        price=210000,
+        quantity=8
     )
 
 
@@ -43,3 +54,8 @@ def product_data_example():
         "price": 31000.0,
         "quantity": 14
       }
+
+
+@pytest.fixture
+def product_iterator_example(category_example):
+    return ProductIterator(category_example)
