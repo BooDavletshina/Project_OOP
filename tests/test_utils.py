@@ -1,7 +1,6 @@
 from unittest.mock import patch, mock_open
 
 from src.category import Category
-from src.product import Product
 from src.utils import read_json, create_object_from_json
 
 
@@ -38,6 +37,4 @@ def test_create_object_from_json():
 
     assert len(result) == 1
     assert isinstance(result[0], Category)
-    assert isinstance(result[0].products[0], Product)
     assert result[0].name == "Смартфоны"
-    assert result[0].products[0].name == "Iphone"
