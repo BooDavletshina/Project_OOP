@@ -2,7 +2,7 @@ import pytest
 
 
 def test_product_iterator(product_iterator_example):
-    """"""
+    """Тестирование итератора"""
     iter(product_iterator_example)
     assert product_iterator_example.index == 0
     assert next(product_iterator_example).name == "Samsung Galaxy C23 Ultra"
