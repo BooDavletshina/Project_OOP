@@ -10,6 +10,14 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        if isinstance(other, Product):
+            full_cost_products = self.__price * self.quantity + other.__price * other.quantity
+            return f"Полная стоимость всех товаров на складе:{full_cost_products} руб."
+
     @classmethod
     def new_product(cls, product_data: dict):
         """Метод, который принимает параметры товара в словаре и возвращает объект класса Product"""
@@ -45,13 +53,20 @@ if __name__ == "__main__":
         "price": 31000.0,
         "quantity": 14
     }
-    product = Product.new_product(product_1)  # проверка класс-метода
-    print(product.name)
-    print(product.description)
-    print(product.price)
-    print(product.quantity)
+    product = Product.new_product(product_1) # проверка класс-метода
+    product_1 = Product("Samsung Galaxy C23 Ultra",
+                        "256GB, Серый цвет, 200MP камера",
+                        180000.0,
+                        5)
 
-    product.price = 0
-    # product.price = 30000
-    product.price = 33000
-    print(product.price)
+    # print(product.name)
+    # print(product.description)
+    # print(product.price)
+    # print(product.quantity)
+    print(str(product))
+    print(product + product_1)
+
+    # product.price = 0
+    # # product.price = 30000
+    # product.price = 33000
+    # print(product.price)
