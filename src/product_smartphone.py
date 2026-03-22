@@ -26,32 +26,31 @@ class Smartphone(Product):
             return f"Полная стоимость всех товаров на складе:{full_cost_products} руб."
         raise TypeError
 
-
-if __name__ == "__main__":
-    smartphone_1 = Smartphone("Samsung Galaxy C23 Ultra",
-                              "256GB, Серый цвет, 200MP камера",
-                              180000.0,
-                              5, "8", "C23 Ultra", 256, "серый")
-
-    smartphone_2 = Product("Iphone 15",
-                           "512GB, Gray space",
-                           210000.0,
-                           8)
-
-    smartphone_3 = Smartphone("Samsung Galaxy C23 Ultra",
-                              "256GB, Серый цвет, 200MP камера",
-                              180000.0,
-                              5, "8", "C23 Ultra", 256, "серый")
-
-    print(smartphone_1.name)
-    print(smartphone_1.description)
-    print(smartphone_1.price)
-    print(smartphone_1.quantity)
-
-    print(smartphone_1.efficiency)
-    print(smartphone_1.model)
-    print(smartphone_1.memory)
-    print(smartphone_1.color)
-
-    print(smartphone_1 + smartphone_3)
-    print(smartphone_1 + smartphone_2)
+# if __name__ == "__main__":
+#     smartphone_1 = Smartphone("Samsung Galaxy C23 Ultra",
+#                               "256GB, Серый цвет, 200MP камера",
+#                               180000.0,
+#                               5, "8", "C23 Ultra", 256, "серый")
+#
+#     smartphone_2 = Product("Iphone 15",
+#                            "512GB, Gray space",
+#                            210000.0,
+#                            8)
+#
+#     smartphone_3 = Smartphone("Samsung Galaxy C23 Ultra",
+#                               "256GB, Серый цвет, 200MP камера",
+#                               180000.0,
+#                               5, "8", "C23 Ultra", 256, "серый")
+#
+#     print(smartphone_1.name)
+#     print(smartphone_1.description)
+#     print(smartphone_1.price)
+#     print(smartphone_1.quantity)
+#
+#     print(smartphone_1.efficiency)
+#     print(smartphone_1.model)
+#     print(smartphone_1.memory)
+#     print(smartphone_1.color)
+#
+#     print(smartphone_1 + smartphone_3)
+#     print(smartphone_1 + smartphone_2)

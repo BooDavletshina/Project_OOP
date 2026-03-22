@@ -24,24 +24,23 @@ class LawnGrass(Product):
             return f"Полная стоимость всех товаров на складе:{full_cost_products} руб."
         raise TypeError
 
-
-if __name__ == "__main__":
-    lawn_1 = LawnGrass("Газон красный", "Газон красный", 180000.0, 5, "Россия", "10 дней", "красный")
-    lawn_2 = LawnGrass("Газон синий", "Газон синий", 180000.0, 5, "Россия", "10 дней", "синий")
-
-    smartphone = Product("Iphone 15",
-                         "512GB, Gray space",
-                         210000.0,
-                         8)
-
-    print(lawn_1.name)
-    print(lawn_1.description)
-    print(lawn_1.price)
-    print(lawn_1.quantity)
-
-    print(lawn_1.country)
-    print(lawn_1.germination_period)
-    print(lawn_1.color)
-
-    print(lawn_1 + lawn_2)
-    print(lawn_1 + smartphone)
+# if __name__ == "__main__":
+#     lawn_1 = LawnGrass("Газон красный", "Газон красный", 180000.0, 5, "Россия", "10 дней", "красный")
+#     lawn_2 = LawnGrass("Газон синий", "Газон синий", 180000.0, 5, "Россия", "10 дней", "синий")
+#
+#     smartphone = Product("Iphone 15",
+#                          "512GB, Gray space",
+#                          210000.0,
+#                          8)
+#
+#     print(lawn_1.name)
+#     print(lawn_1.description)
+#     print(lawn_1.price)
+#     print(lawn_1.quantity)
+#
+#     print(lawn_1.country)
+#     print(lawn_1.germination_period)
+#     print(lawn_1.color)
+#
+#     print(lawn_1 + lawn_2)
+#     print(lawn_1 + smartphone)

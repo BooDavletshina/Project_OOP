@@ -33,21 +33,21 @@ class Category:
 
     def add_product(self, new_product: Product):
         """Метод для добавления продукта в атрибут products"""
-        for product in self.__products:
-            if product.name == new_product.name:  # проверяем на дубликат по имени
-                product.quantity += new_product.quantity  # если дубликат по имени складываем кол-во
-                product.price = max(product.price, new_product.price)  # выбираем максимальную цену
-                break
+        if isinstance(new_product, Product):
+            for product in self.__products:
+                if product.name == new_product.name:  # проверяем на дубликат по имени
+                    product.quantity += new_product.quantity  # если дубликат по имени складываем кол-во
+                    product.price = max(product.price, new_product.price)  # выбираем максимальную цену
+                    break
 
-        else:
-            self.__products.append(new_product)
-            Category.product_count += 1
+            else:
+                self.__products.append(new_product)
+                Category.product_count += 1
 
     @property
     def product(self):
         """Метод, который возвращает значение атрибута products"""
         return self.__products
-
 
 # if __name__ == "__main__":
 #     product_1 = Product("Samsung Galaxy C23 Ultra",
@@ -76,3 +76,6 @@ class Category:
 #     print(category_1.product_count)
 #
 #     print(str(category_1))
+#     lawn_1 = LawnGrass("Газон красный", "Газон красный", 180000.0, 5, "Россия", "10 дней", "красный")
+#     category_1.add_product(lawn_1)
+#     print(category_1.products)
