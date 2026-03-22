@@ -14,7 +14,6 @@ class Smartphone(Product):
     def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
         """Метод инициализации дочернего класса: Смартфоны"""
         super().__init__(name, description, price, quantity)
-        self.__price = price
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
@@ -22,7 +21,7 @@ class Smartphone(Product):
 
     def __add__(self, other):
         if type(other) is Smartphone:
-            full_cost_products = self.__price * self.quantity + other.__price * other.quantity
+            full_cost_products = self.price * self.quantity + other.price * other.quantity
             return f"Полная стоимость всех товаров на складе:{full_cost_products} руб."
         raise TypeError
 

@@ -13,14 +13,13 @@ class LawnGrass(Product):
     def __init__(self, name, description, price, quantity, country, germination_period, color):
         """Метод инициализации дочернего класса: Трава газонная"""
         super().__init__(name, description, price, quantity)
-        self.__price = price
         self.country = country
         self.germination_period = germination_period
         self.color = color
 
     def __add__(self, other):
         if type(other) is LawnGrass:
-            full_cost_products = self.__price * self.quantity + other.__price * other.quantity
+            full_cost_products = self.price * self.quantity + other.price * other.quantity
             return f"Полная стоимость всех товаров на складе:{full_cost_products} руб."
         raise TypeError
 
