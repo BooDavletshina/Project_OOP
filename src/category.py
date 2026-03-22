@@ -43,6 +43,8 @@ class Category:
             else:
                 self.__products.append(new_product)
                 Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def product(self):

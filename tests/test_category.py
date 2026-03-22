@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_category_init(category_example):
     """Тест на корректность инициализации объектов класса Category"""
     assert category_example.name == "Смартфоны"
@@ -33,3 +36,15 @@ def test_product_property(category_example):
 def test_category_str(category_example):
     """Тест на корректное выведение строкового отображения"""
     assert str(category_example) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_add_product_error(category_example):
+    """Тест на выброс ошибки при добавлении продукта в атрибут products, не относящегося к классу Product"""
+    with pytest.raises(TypeError):
+        category_example.add_product(1)
+
+
+def test_add_product_smartphone(category_example, product_smartphone_1):
+    """Тест на корректное добавление экземпляра класса Smartphone в атрибут products"""
+    category_example.add_product(product_smartphone_1)
+    assert category_example.product[0].quantity == 10

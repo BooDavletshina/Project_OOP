@@ -3,6 +3,8 @@ import pytest
 from src.category import Category
 from src.product import Product
 from src.product_iterator import ProductIterator
+from src.product_lawn_grass import LawnGrass
+from src.product_smartphone import Smartphone
 
 
 @pytest.fixture
@@ -53,9 +55,39 @@ def product_data_example():
         "description": "1024GB, Синий",
         "price": 31000.0,
         "quantity": 14
-      }
+    }
 
 
 @pytest.fixture
 def product_iterator_example(category_example):
     return ProductIterator(category_example)
+
+
+@pytest.fixture
+def product_smartphone_1():
+    return Smartphone("Samsung Galaxy C23 Ultra",
+                      "256GB, Серый цвет, 200MP камера",
+                      180000.0,
+                      5,
+                      "8",
+                      "C23 Ultra",
+                      256,
+                      "серый")
+
+
+@pytest.fixture
+def product_smartphone_2():
+    return Smartphone("Iphone 15",
+                      "512GB, Blue space",
+                      210000.0,
+                      8, "10", "15", "512", "синий")
+
+
+@pytest.fixture
+def product_lawn_1():
+    return LawnGrass("Газон синий", "Газон синий", 180000.0, 5, "Россия", "10 дней", "синий")
+
+
+@pytest.fixture
+def product_lawn_2():
+    return LawnGrass("Газон красный", "Газон красный", 180000.0, 5, "Россия", "10 дней", "красный")
