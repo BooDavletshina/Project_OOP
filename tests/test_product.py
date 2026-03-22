@@ -56,3 +56,13 @@ def test_price_setter_decrease_reject(product_example):
         product_example.price = 150000.0
 
     assert product_example.price == 180000.0
+
+
+def test_product_str(product_example):
+    """Тест на корректное выведение строкового отображения"""
+    assert str(product_example) == "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт."
+
+
+def test_product_add(product_example, product_example2):
+    """Тест на корректное вычисление полной стоимости всех товаров на складе"""
+    assert product_example2 + product_example == "Полная стоимость всех товаров на складе:2580000.0 руб."

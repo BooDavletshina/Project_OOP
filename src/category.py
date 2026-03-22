@@ -16,13 +16,19 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
+    def __str__(self):
+        full_product_count = 0
+        for product in self.__products:
+            full_product_count += product.quantity
+        return f"{self.name}, количество продуктов: {full_product_count} шт."
+
     @property
     def products(self):
         """Метод, который позволяет выводить список товаров в виде строк в формате:
         Название продукта, 80 руб. Остаток: 15 шт."""
         products_str = ""
         for product in self.__products:
-            products_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
+            products_str += f"{str(product)}\n"
         return products_str
 
     def add_product(self, new_product: Product):
@@ -41,6 +47,7 @@ class Category:
     def product(self):
         """Метод, который возвращает значение атрибута products"""
         return self.__products
+
 
 # if __name__ == "__main__":
 #     product_1 = Product("Samsung Galaxy C23 Ultra",
@@ -67,3 +74,5 @@ class Category:
 #     category_1.add_product(product_4)
 #     print(category_1.products)
 #     print(category_1.product_count)
+#
+#     print(str(category_1))
