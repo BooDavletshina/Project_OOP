@@ -2,9 +2,10 @@ from src.product import Product
 from src.product_smartphone import Smartphone
 from src.product_lawn_grass import LawnGrass
 
+
 def test_print_mixin(capsys):
     """Тест на вывод информации при создании экземпляра класса"""
-    Product("Iphone 15","512GB, Gray space",210000,8)
+    Product("Iphone 15", "512GB, Gray space", 210000, 8)
     message = capsys.readouterr()
     assert message.out.strip() == 'Product(Iphone 15, 512GB, Gray space, 210000, 8)'
 
