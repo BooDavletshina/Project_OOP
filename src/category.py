@@ -55,7 +55,7 @@ class Category:
         """Метод, который подсчитывает средний ценник всех товаров"""
         try:
             middle_price = sum([product.price for product in self.__products]) / len(self.__products)
-            return middle_price
+            return round(middle_price, 2)
         except ZeroDivisionError:
             return 0
 
