@@ -1,5 +1,7 @@
 import pytest
 
+from src.category import Category
+
 
 def test_category_init(category_example):
     """Тест на корректность инициализации объектов класса Category"""
@@ -48,3 +50,14 @@ def test_add_product_smartphone(category_example, product_smartphone_1):
     """Тест на корректное добавление экземпляра класса Smartphone в атрибут products"""
     category_example.add_product(product_smartphone_1)
     assert category_example.product[0].quantity == 10
+
+
+def test_middle_price(category_example):
+    """Тест на корректный подсчет среднего ценник всех товаров"""
+    assert category_example.middle_price() == 140333.33
+
+
+def test_middle_price_zero_division_error():
+    """Тест, на то, что при отсутствии товаров в атрибуте products выведется 0"""
+    category_1 = Category("Смартфоны", "Смартфоны", [])
+    assert category_1.middle_price() == 0

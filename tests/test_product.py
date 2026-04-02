@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from src.product import Product
 
 
@@ -66,3 +68,12 @@ def test_product_str(product_example):
 def test_product_add(product_example, product_example2):
     """Тест на корректное вычисление полной стоимости всех товаров на складе"""
     assert product_example2 + product_example == "Полная стоимость всех товаров на складе:2580000.0 руб."
+
+
+def test_product_init_rises():
+    """Тест на возбуждение ошибки при попытке создать товар с нулевым количеством"""
+    with pytest.raises(ValueError):
+        Product("Samsung Galaxy C23 Ultra",
+                "256GB, Серый цвет, 200MP камера",
+                180000.0,
+                0)

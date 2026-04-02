@@ -51,6 +51,14 @@ class Category:
         """Метод, который возвращает значение атрибута products"""
         return self.__products
 
+    def middle_price(self):
+        """Метод, который подсчитывает средний ценник всех товаров"""
+        try:
+            middle_price = sum([product.price for product in self.__products]) / len(self.__products)
+            return round(middle_price, 2)
+        except ZeroDivisionError:
+            return 0
+
 # if __name__ == "__main__":
 #     product_1 = Product("Samsung Galaxy C23 Ultra",
 #                         "256GB, Серый цвет, 200MP камера",
